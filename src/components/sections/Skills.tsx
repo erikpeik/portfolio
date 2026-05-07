@@ -92,11 +92,11 @@ export default function Skills() {
   const { t } = useTranslation();
 
   return (
-    <section id="skills" className="relative overflow-hidden py-6 px-6">
+    <section id="skills" className="relative overflow-hidden py-6 pb-12 px-6">
       {/* Smoke gradient background */}
       <div className="absolute -top-20 left-1/4 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-10 right-1/4 w-[400px] h-[400px] bg-cyan-500/8 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-purple-600/8 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[200px] bg-[#0a0a0f] blur-[60px] pointer-events-none" />
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

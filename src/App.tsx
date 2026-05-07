@@ -19,6 +19,7 @@ function App() {
         <About />
         <div className="section-divider" />
         <Skills />
+        <div className="section-divider" />
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 md:divide-x md:divide-white/5">
           <Experience />
           <Education />
