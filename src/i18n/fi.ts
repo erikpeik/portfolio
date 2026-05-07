@@ -21,7 +21,10 @@ const fi = {
   },
   skills: {
     title: 'Taidot',
-    subtitle: 'Teknologiat, joita käytän',
+    subtitle: 'Teknologiat, joiden parissa työskentelen',
+    frontend: 'Frontend',
+    backend: 'Backend',
+    tools: 'Tools & Cloud',
   },
   experience: {
     title: 'Kokemus',

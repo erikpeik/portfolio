@@ -17,11 +17,14 @@ const en = {
   },
   about: {
     title: 'About Me',
-    text: "I'm a software developer based in Finland, currently working at Tieto on healthcare projects. I enjoy building modern web applications, and I'm always looking to learn new technologies. Outside of work, I run a CS2 community server project called JonneKahvila.",
+    text: "I'm a software developer based in Finland, currently working at Tieto on healthcare projects. I enjoy building modern web applications , and I'm always looking to learn new technologies. Outside of work, I run a CS2 community server project called JonneKahvila.",
   },
   skills: {
     title: 'Skills',
     subtitle: 'Technologies I work with',
+    frontend: 'Frontend',
+    backend: 'Backend',
+    tools: 'Tools & Cloud',
   },
   experience: {
     title: 'Experience',
