@@ -2,8 +2,22 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 
+function calcDuration(startYear: number, startMonth: number, lang: string): string {
+  const now = new Date()
+  const totalMonths =
+    (now.getFullYear() - startYear) * 12 + (now.getMonth() - (startMonth - 1)) + 1
+  const years = Math.floor(totalMonths / 12)
+  const months = totalMonths % 12
+  const y = lang === 'fi' ? 'v' : 'yr'
+  const m = lang === 'fi' ? 'kk' : 'mo'
+  if (years === 0) return `${months} ${m}`
+  if (months === 0) return `${years} ${y}`
+  return `${years} ${y} ${months} ${m}`
+}
+
 export default function Experience() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const duration = calcDuration(2022, 12, i18n.language);
 
   return (
     <section id="experience" className="py-6 px-4">
@@ -41,9 +55,14 @@ export default function Experience() {
                     {t('experience.tieto_company')}
                   </p>
                 </div>
-                <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
-                  {t('experience.tieto_period')}
-                </span>
+                <div className="flex flex-col items-end gap-1.5">
+                  <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
+                    {t('experience.tieto_period')}
+                  </span>
+                  <span className="text-xs text-violet-300 bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full whitespace-nowrap">
+                    {duration}
+                  </span>
+                </div>
               </div>
               <p className="text-slate-300 leading-relaxed mb-4">
                 {t('experience.tieto_desc')}

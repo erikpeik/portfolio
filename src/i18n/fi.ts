@@ -10,14 +10,14 @@ const fi = {
   hero: {
     greeting: 'Hei, olen',
     role: 'Ohjelmistokehittäjä',
-    subtitle: 'Rakennan terveydenhuollon ohjelmistoja Tietolla. Intohimona puhdas koodi ja hyvä käyttäjäkokemus.',
+    subtitle: 'Full-stack kehittäjä, erikoistunut moderniin web-kehitykseen.',
     cta_github: 'GitHub',
     cta_linkedin: 'LinkedIn',
     scroll_down: 'Selaa alas',
   },
   about: {
-    title: 'Minusta',
-    text: 'Olen ohjelmistokehittäjä Suomesta, ja työskentelen tällä hetkellä Tietolla terveydenhuollon projekteissa. Nautin modernien web-sovellusten rakentamisesta Reactilla ja TypeScriptillä, ja opiskelen aina uusia teknologioita. Työn ulkopuolella pyöritän CS2-yhteisöpalvelinprojektia nimeltä JonneKahvila.',
+    title: 'Tietoa minusta',
+    text: 'Olen ohjelmistokehittäjä ja työskentelen tällä hetkellä Tietolla terveydenhuollon projekteissa. Nautin modernien web-sovellusten rakentamisesta ja opiskelen aina uusia teknologioita. Työn ulkopuolella pyöritän CS2-yhteisöpalvelinprojektia nimeltä JonneKahvila.',
   },
   skills: {
     title: 'Taidot',
@@ -28,14 +28,16 @@ const fi = {
     tieto_role: 'Ohjelmistokehittäjä',
     tieto_company: 'Tieto',
     tieto_period: 'Joulukuu 2022 – Nykyhetki',
-    tieto_desc: 'Työskentelen erilaisten terveydenhuollon projektien parissa, rakentaen ja ylläpitäen kliinisissä ympäristöissä käytettäviä ohjelmistoja.',
+    tieto_desc:
+      'Työskentelen erilaisten terveydenhuollon projektien parissa, rakentaen ja ylläpitäen kliinisissä ympäristöissä käytettäviä ohjelmistoja.',
     tieto_stack: 'React · TypeScript · C# · .NET · Azure · Next.js',
   },
   education: {
     title: 'Koulutus',
     hive_school: 'Hive Helsinki',
     hive_period: 'Lokakuu 2021 – Joulukuu 2022',
-    hive_desc: 'Vertaisoppimiseen ja projekteihin perustuva koulutus. Aloitin C-kielellä, sitten siirryin web-kehitykseen PHP:llä, Reactilla ja Node.js:llä. Opin tärkeitä työkaluja kuten Docker, Git, Unix ja Bash.',
+    hive_desc:
+      'Vertaisoppimiseen ja projekteihin perustuva koulutus. Aloitin C-kielellä, sitten siirryin web-kehitykseen PHP:llä, Reactilla ja Node.js:llä. Opin tärkeitä työkaluja kuten Docker, Git, Unix ja Bash.',
     helsinki_school: 'Helsingin yliopisto',
     helsinki_degree: 'Kandidaatin tutkinto, Tietojenkäsittelytiede',
     helsinki_period: 'Elokuu 2022 – Nykyhetki',
@@ -45,17 +47,18 @@ const fi = {
     title: 'Projektit',
     subtitle: 'Asioita, joita olen rakentanut',
     jonne_name: 'JonneKahvila',
-    jonne_desc: 'CS2-yhteisöpalvelimet, jotka omistan ja hallinnoin kokonaan. Kehitän omia pelimodiuksia, pyöritän palvelimia itse ylläpitämälläni dedikoidulla palvelimella ja rakensin verkkosivuston itse alusta loppuun.',
+    jonne_desc:
+      'CS2-yhteisöpalvelimet, jotka omistan ja hallinnoin kokonaan. Kehitän omia pelimodiuksia, pyöritän palvelimia itse ylläpitämälläni dedikoidulla palvelimella ja rakensin verkkosivuston itse alusta loppuun.',
     jonne_link: 'Vieraile sivustolla',
   },
   contact: {
-    title: 'Otetaan yhteyttä',
+    title: 'Ota yhteyttä',
     subtitle: 'Löydät minut verkosta',
     github: 'GitHub',
     linkedin: 'LinkedIn',
     email: 'Sähköposti',
     discord: 'Discord',
   },
-} as const
+} as const;
 
-export default fi
+export default fi;
