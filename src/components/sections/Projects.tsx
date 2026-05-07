@@ -1,9 +1,9 @@
-import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 
 export default function Projects() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <section id="projects" className="py-24 px-6">
@@ -48,7 +48,7 @@ export default function Projects() {
             <a
               href="https://jonnekahvila.fi/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-violet-600/20 to-cyan-600/20 border border-violet-500/30 text-violet-300 hover:border-violet-400/60 hover:text-violet-200 hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all duration-300 text-sm font-medium"
             >
               {t('projects.jonne_link')}
@@ -58,5 +58,5 @@ export default function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
