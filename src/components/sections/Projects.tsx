@@ -6,14 +6,14 @@ export default function Projects() {
   const { t } = useTranslation();
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-12 px-6">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-6"
         >
           <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">
             {t('projects.title')}

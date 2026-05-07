@@ -38,7 +38,7 @@ export default function Contact() {
   const { t } = useTranslation()
 
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-12 px-6">
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

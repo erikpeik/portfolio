@@ -1,19 +1,19 @@
-import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
-import { Briefcase } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { Briefcase } from 'lucide-react';
 
 export default function Experience() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
-    <section id="experience" className="py-24 px-6">
+    <section id="experience" className="py-12 px-6">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-6"
         >
           <h2 className="text-3xl md:text-4xl font-bold gradient-text">
             {t('experience.title')}
@@ -37,7 +37,9 @@ export default function Experience() {
                   <h3 className="text-xl font-semibold text-white">
                     {t('experience.tieto_role')}
                   </h3>
-                  <p className="text-violet-300 font-medium">{t('experience.tieto_company')}</p>
+                  <p className="text-violet-300 font-medium">
+                    {t('experience.tieto_company')}
+                  </p>
                 </div>
                 <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
                   {t('experience.tieto_period')}
@@ -54,5 +56,5 @@ export default function Experience() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

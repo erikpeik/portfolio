@@ -1,9 +1,9 @@
-import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
-import { GraduationCap } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { GraduationCap } from 'lucide-react';
 
 export default function Education() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const items = [
     {
@@ -18,17 +18,17 @@ export default function Education() {
       period: t('education.helsinki_period'),
       desc: t('education.helsinki_desc'),
     },
-  ]
+  ];
 
   return (
-    <section id="education" className="py-24 px-6">
+    <section id="education" className="py-12 px-6">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-6"
         >
           <h2 className="text-3xl md:text-4xl font-bold gradient-text">
             {t('education.title')}
@@ -52,9 +52,13 @@ export default function Education() {
                 <div className="flex-1">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <div>
-                      <h3 className="text-xl font-semibold text-white">{item.school}</h3>
+                      <h3 className="text-xl font-semibold text-white">
+                        {item.school}
+                      </h3>
                       {item.degree && (
-                        <p className="text-cyan-300 font-medium">{item.degree}</p>
+                        <p className="text-cyan-300 font-medium">
+                          {item.degree}
+                        </p>
                       )}
                     </div>
                     <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
@@ -69,5 +73,5 @@ export default function Education() {
         </div>
       </div>
     </section>
-  )
+  );
 }

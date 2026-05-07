@@ -1,33 +1,93 @@
-import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 const skills = [
-  { name: 'React', color: 'from-cyan-500/20 to-cyan-500/5', border: 'border-cyan-500/20', text: 'text-cyan-300' },
-  { name: 'TypeScript', color: 'from-blue-500/20 to-blue-500/5', border: 'border-blue-500/20', text: 'text-blue-300' },
-  { name: 'Next.js', color: 'from-white/10 to-white/5', border: 'border-white/10', text: 'text-slate-200' },
-  { name: 'C#', color: 'from-violet-500/20 to-violet-500/5', border: 'border-violet-500/20', text: 'text-violet-300' },
-  { name: '.NET', color: 'from-purple-500/20 to-purple-500/5', border: 'border-purple-500/20', text: 'text-purple-300' },
-  { name: 'Azure', color: 'from-sky-500/20 to-sky-500/5', border: 'border-sky-500/20', text: 'text-sky-300' },
-  { name: 'Node.js', color: 'from-green-500/20 to-green-500/5', border: 'border-green-500/20', text: 'text-green-300' },
-  { name: 'PHP', color: 'from-indigo-500/20 to-indigo-500/5', border: 'border-indigo-500/20', text: 'text-indigo-300' },
-  { name: 'C', color: 'from-orange-500/20 to-orange-500/5', border: 'border-orange-500/20', text: 'text-orange-300' },
-  { name: 'Docker', color: 'from-blue-400/20 to-blue-400/5', border: 'border-blue-400/20', text: 'text-blue-200' },
-  { name: 'Git', color: 'from-red-500/20 to-red-500/5', border: 'border-red-500/20', text: 'text-red-300' },
-  { name: 'Linux', color: 'from-yellow-500/20 to-yellow-500/5', border: 'border-yellow-500/20', text: 'text-yellow-300' },
-]
+  {
+    name: 'React',
+    color: 'from-cyan-500/20 to-cyan-500/5',
+    border: 'border-cyan-500/20',
+    text: 'text-cyan-300',
+  },
+  {
+    name: 'TypeScript',
+    color: 'from-blue-500/20 to-blue-500/5',
+    border: 'border-blue-500/20',
+    text: 'text-blue-300',
+  },
+  {
+    name: 'Next.js',
+    color: 'from-white/10 to-white/5',
+    border: 'border-white/10',
+    text: 'text-slate-200',
+  },
+  {
+    name: 'C#',
+    color: 'from-violet-500/20 to-violet-500/5',
+    border: 'border-violet-500/20',
+    text: 'text-violet-300',
+  },
+  {
+    name: '.NET',
+    color: 'from-purple-500/20 to-purple-500/5',
+    border: 'border-purple-500/20',
+    text: 'text-purple-300',
+  },
+  {
+    name: 'Azure',
+    color: 'from-sky-500/20 to-sky-500/5',
+    border: 'border-sky-500/20',
+    text: 'text-sky-300',
+  },
+  {
+    name: 'Node.js',
+    color: 'from-green-500/20 to-green-500/5',
+    border: 'border-green-500/20',
+    text: 'text-green-300',
+  },
+  {
+    name: 'PHP',
+    color: 'from-indigo-500/20 to-indigo-500/5',
+    border: 'border-indigo-500/20',
+    text: 'text-indigo-300',
+  },
+  {
+    name: 'C',
+    color: 'from-orange-500/20 to-orange-500/5',
+    border: 'border-orange-500/20',
+    text: 'text-orange-300',
+  },
+  {
+    name: 'Docker',
+    color: 'from-blue-400/20 to-blue-400/5',
+    border: 'border-blue-400/20',
+    text: 'text-blue-200',
+  },
+  {
+    name: 'Git',
+    color: 'from-red-500/20 to-red-500/5',
+    border: 'border-red-500/20',
+    text: 'text-red-300',
+  },
+  {
+    name: 'Linux',
+    color: 'from-yellow-500/20 to-yellow-500/5',
+    border: 'border-yellow-500/20',
+    text: 'text-yellow-300',
+  },
+];
 
 export default function Skills() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-12 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-6"
         >
           <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">
             {t('skills.title')}
@@ -51,5 +111,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
