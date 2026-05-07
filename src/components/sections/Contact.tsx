@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { Mail } from 'lucide-react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa'
 
 const links = [
   {
@@ -17,6 +17,13 @@ const links = [
     href: 'https://www.linkedin.com/in/erikpeik/',
     color: 'hover:border-sky-500/50 hover:text-sky-300',
     glow: 'hover:shadow-[0_0_20px_rgba(14,165,233,0.3)]',
+  },
+  {
+    key: 'discord',
+    icon: FaDiscord,
+    href: 'https://discord.com/users/183537301526282241',
+    color: 'hover:border-indigo-500/50 hover:text-indigo-300',
+    glow: 'hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]',
   },
   {
     key: 'email',

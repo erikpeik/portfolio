@@ -54,6 +54,7 @@ const fi = {
     github: 'GitHub',
     linkedin: 'LinkedIn',
     email: 'Sähköposti',
+    discord: 'Discord',
   },
 } as const
 

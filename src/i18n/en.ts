@@ -54,6 +54,7 @@ const en = {
     github: 'GitHub',
     linkedin: 'LinkedIn',
     email: 'Email',
+    discord: 'Discord',
   },
 } as const
 
