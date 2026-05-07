@@ -8,8 +8,8 @@ void i18n.use(initReactI18next).init({
     en: { translation: en },
     fi: { translation: fi },
   },
-  lng: 'en',
-  fallbackLng: 'en',
+  lng: window.location.pathname.startsWith('/en') ? 'en' : 'fi',
+  fallbackLng: 'fi',
   interpolation: { escapeValue: false },
 })
 

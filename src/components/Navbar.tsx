@@ -16,8 +16,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Sync language when browser back/forward is used
+  useEffect(() => {
+    const onPopState = () => {
+      const lang = window.location.pathname.startsWith('/en') ? 'en' : 'fi'
+      void i18n.changeLanguage(lang)
+    }
+    window.addEventListener('popstate', onPopState)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, [i18n])
+
   const toggleLanguage = () => {
-    void i18n.changeLanguage(i18n.language === 'en' ? 'fi' : 'en')
+    const next = i18n.language === 'en' ? 'fi' : 'en'
+    void i18n.changeLanguage(next)
+    history.pushState(null, '', next === 'en' ? '/en' : '/')
   }
 
   return (
