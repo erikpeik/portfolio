@@ -42,9 +42,13 @@ export default function Navbar() {
       )}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <span className="gradient-text font-bold text-lg tracking-tight">
+        <a
+          href="#"
+          className="gradient-text font-bold text-lg tracking-tight"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+        >
           Erik Mende
-        </span>
+        </a>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-6">
