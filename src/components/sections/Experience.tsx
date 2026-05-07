@@ -39,14 +39,14 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="card-glow bg-white/5 border border-white/10 rounded-2xl p-8"
+          className="card-glow bg-white/5 border border-white/10 rounded-2xl p-4 md:p-8"
         >
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-violet-600/30 to-cyan-600/30 border border-violet-500/20 flex items-center justify-center">
-              <Briefcase size={22} className="text-violet-300" />
+          <div className="flex items-start gap-3 md:gap-4">
+            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-violet-600/30 to-cyan-600/30 border border-violet-500/20 flex items-center justify-center">
+              <Briefcase size={20} className="text-violet-300" />
             </div>
-            <div className="flex-1">
-              <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                 <div>
                   <h3 className="text-xl font-semibold text-white">
                     {t('experience.tieto_role')}
@@ -55,8 +55,8 @@ export default function Experience() {
                     {t('experience.tieto_company')}
                   </p>
                 </div>
-                <div className="flex flex-col items-end gap-1.5">
-                  <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
+                <div className="flex flex-row sm:flex-col sm:items-end gap-1.5 flex-wrap">
+                  <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
                     {t('experience.tieto_period')}
                   </span>
                   <span className="text-xs text-violet-300 bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full whitespace-nowrap">

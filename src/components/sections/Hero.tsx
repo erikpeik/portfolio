@@ -31,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="gradient-text glow-text text-6xl md:text-8xl font-bold mb-4 leading-tight"
+          className="gradient-text glow-text text-5xl md:text-8xl font-bold mb-4 leading-tight"
         >
           Erik Mende
         </motion.h1>
