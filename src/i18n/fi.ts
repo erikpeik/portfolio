@@ -45,7 +45,7 @@ const fi = {
     title: 'Projektit',
     subtitle: 'Asioita, joita olen rakentanut',
     jonne_name: 'JonneKahvila',
-    jonne_desc: 'CS2-yhteisöpalvelinprojekti — paikka pelaajille nauttia mukautetuista pelitavoista ja ystävällisestä yhteisöstä.',
+    jonne_desc: 'CS2-yhteisöpalvelimet, jotka omistan ja hallinnoin kokonaan. Kehitän omia pelimodiuksia, pyöritän palvelimia itse ylläpitämälläni dedikoidulla palvelimella ja rakensin verkkosivuston itse alusta loppuun.',
     jonne_link: 'Vieraile sivustolla',
   },
   contact: {

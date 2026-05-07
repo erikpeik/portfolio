@@ -6,7 +6,7 @@ export default function Experience() {
   const { t } = useTranslation();
 
   return (
-    <section id="experience" className="py-12 px-6">
+    <section id="experience" className="py-6 px-4">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

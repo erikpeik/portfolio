@@ -16,11 +16,9 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4 text-center">
             {t('about.title')}
           </h2>
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 card-glow">
-            <p className="text-slate-300 text-lg leading-relaxed text-center">
-              {t('about.text')}
-            </p>
-          </div>
+          <p className="text-slate-300 text-lg leading-relaxed text-center">
+            {t('about.text')}
+          </p>
         </motion.div>
       </div>
     </section>

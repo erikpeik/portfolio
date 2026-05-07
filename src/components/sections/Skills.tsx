@@ -80,7 +80,7 @@ export default function Skills() {
   const { t } = useTranslation();
 
   return (
-    <section id="skills" className="py-12 px-6">
+    <section id="skills" className="py-6 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

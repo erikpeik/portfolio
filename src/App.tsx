@@ -19,11 +19,11 @@ function App() {
         <About />
         <div className="section-divider" />
         <Skills />
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 md:divide-x md:divide-white/5">
+          <Experience />
+          <Education />
+        </div>
         <div className="section-divider" />
-        <Experience />
-        {/* <div className="section-divider" /> */}
-        <Education />
-        {/* <div className="section-divider" /> */}
         <Projects />
         <div className="section-divider" />
         <Contact />

@@ -45,7 +45,7 @@ const en = {
     title: 'Projects',
     subtitle: 'Things I have built',
     jonne_name: 'JonneKahvila',
-    jonne_desc: 'A CS2 community server project — a place for players to enjoy custom game modes and a friendly community.',
+    jonne_desc: 'CS2 community servers I own and fully manage end-to-end. I develop custom game-mode plugins, run the servers on a dedicated machine I maintain myself, and built the website from scratch.',
     jonne_link: 'Visit site',
   },
   contact: {

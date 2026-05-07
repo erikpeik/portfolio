@@ -21,7 +21,7 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-12 px-6">
+    <section id="education" className="py-6 px-4">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
