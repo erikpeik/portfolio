@@ -50,21 +50,17 @@ export default function Education() {
                   <GraduationCap size={20} className="text-cyan-300" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">
-                        {item.school}
-                      </h3>
-                      {item.degree && (
-                        <p className="text-cyan-300 font-medium">
-                          {item.degree}
-                        </p>
-                      )}
-                    </div>
-                    <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full self-start">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <h3 className="text-xl font-semibold text-white">
+                      {item.school}
+                    </h3>
+                    <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
                       {item.period}
                     </span>
                   </div>
+                  {item.degree && (
+                    <p className="text-cyan-300 font-medium mb-2">{item.degree}</p>
+                  )}
                   <p className="text-slate-300 leading-relaxed">{item.desc}</p>
                 </div>
               </div>

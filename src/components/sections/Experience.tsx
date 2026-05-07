@@ -46,17 +46,12 @@ export default function Experience() {
               <Briefcase size={20} className="text-violet-300" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                <div>
-                  <h3 className="text-xl font-semibold text-white">
-                    {t('experience.tieto_role')}
-                  </h3>
-                  <p className="text-violet-300 font-medium">
-                    {t('experience.tieto_company')}
-                  </p>
-                </div>
-                <div className="flex flex-row sm:flex-col sm:items-end gap-1.5 flex-wrap">
-                  <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <h3 className="text-xl font-semibold text-white">
+                  {t('experience.tieto_role')}
+                </h3>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
                     {t('experience.tieto_period')}
                   </span>
                   <span className="text-xs text-violet-300 bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full whitespace-nowrap">
@@ -64,6 +59,9 @@ export default function Experience() {
                   </span>
                 </div>
               </div>
+              <p className="text-violet-300 font-medium mb-2">
+                {t('experience.tieto_company')}
+              </p>
               <p className="text-slate-300 leading-relaxed mb-4">
                 {t('experience.tieto_desc')}
               </p>
