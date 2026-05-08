@@ -10,9 +10,15 @@
         window.location.search +
         window.location.hash;
 
-      window.location.replace(
-        `${window.location.origin}/?p=${encodeURIComponent(redirectedPath)}`
-      );
+      if (
+        redirectedPath.startsWith('/') &&
+        !redirectedPath.startsWith('//') &&
+        !redirectedPath.includes('://')
+      ) {
+        window.location.replace(
+          `${window.location.origin}/?p=${encodeURIComponent(redirectedPath)}`
+        );
+      }
     </script>
   </head>
   <body></body>

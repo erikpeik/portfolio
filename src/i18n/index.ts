@@ -3,10 +3,17 @@ import { initReactI18next } from 'react-i18next'
 import en from './en'
 import fi from './fi'
 
-const redirectedPath = new URL(window.location.href).searchParams.get('p')
+const isSafeRedirectPath = (path: string) =>
+  path.startsWith('/') && !path.startsWith('//') && !path.includes('://')
 
-if (redirectedPath) {
-  window.history.replaceState(null, '', redirectedPath)
+try {
+  const redirectedPath = new URL(window.location.href).searchParams.get('p')
+
+  if (redirectedPath && isSafeRedirectPath(redirectedPath)) {
+    window.history.replaceState(null, '', redirectedPath)
+  }
+} catch {
+  // Ignore malformed redirect query values and continue with the current URL.
 }
 
 void i18n.use(initReactI18next).init({
