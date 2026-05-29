@@ -1,6 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import {
+  containerVariants,
+  sectionVariants,
+  cardVariants,
+  viewportConfig,
+} from '@/lib/animationVariants';
 
 const highlights = ['CS2 Servers', 'Plugin Dev', 'Dedicated Server', 'Website'];
 
@@ -9,14 +15,14 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-12 px-6">
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-6"
-        >
+      <motion.div
+        className="max-w-3xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportConfig}
+      >
+        <motion.div variants={sectionVariants} className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">
             {t('projects.title')}
           </h2>
@@ -24,10 +30,7 @@ export default function Projects() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          variants={cardVariants}
           className="card-glow bg-white/5 border border-white/10 rounded-2xl overflow-hidden"
         >
           <div className="flex flex-col md:flex-row">
@@ -83,7 +86,7 @@ export default function Projects() {
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

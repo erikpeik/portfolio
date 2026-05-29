@@ -1,6 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
+import {
+  containerVariants,
+  sectionVariants,
+  cardVariants,
+  viewportConfig,
+} from '@/lib/animationVariants';
 
 export default function Education() {
   const { t } = useTranslation();
@@ -22,27 +28,24 @@ export default function Education() {
 
   return (
     <section id="education" className="py-6 px-4">
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-6"
-        >
+      <motion.div
+        className="max-w-3xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportConfig}
+      >
+        <motion.div variants={sectionVariants} className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold gradient-text">
             {t('education.title')}
           </h2>
         </motion.div>
 
         <div className="flex flex-col gap-5">
-          {items.map((item, i) => (
+          {items.map((item) => (
             <motion.div
               key={item.school}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              variants={cardVariants}
               className="card-glow bg-white/5 border border-white/10 rounded-2xl p-4 md:p-8"
             >
               <div className="flex items-start gap-3 md:gap-4">
@@ -59,7 +62,9 @@ export default function Education() {
                     </span>
                   </div>
                   {item.degree && (
-                    <p className="text-cyan-300 font-medium mb-2">{item.degree}</p>
+                    <p className="text-cyan-300 font-medium mb-2">
+                      {item.degree}
+                    </p>
                   )}
                   <p className="text-slate-300 leading-relaxed">{item.desc}</p>
                 </div>
@@ -67,7 +72,7 @@ export default function Education() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
