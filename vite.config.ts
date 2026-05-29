@@ -6,13 +6,20 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Relative base keeps assets working on both project Pages URL and custom domain.
-  base: './',
+  base: '/',
   plugins: [
     tailwindcss(),
     react(),
     babel({ presets: [reactCompilerPreset()] }),
   ],
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        en: path.resolve(__dirname, 'en/index.html'),
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
