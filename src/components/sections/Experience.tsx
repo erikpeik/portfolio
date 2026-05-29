@@ -1,18 +1,30 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
+import {
+  containerVariants,
+  sectionVariants,
+  cardVariants,
+  viewportConfig,
+} from '@/lib/animationVariants';
 
-function calcDuration(startYear: number, startMonth: number, lang: string): string {
-  const now = new Date()
+function calcDuration(
+  startYear: number,
+  startMonth: number,
+  lang: string,
+): string {
+  const now = new Date();
   const totalMonths =
-    (now.getFullYear() - startYear) * 12 + (now.getMonth() - (startMonth - 1)) + 1
-  const years = Math.floor(totalMonths / 12)
-  const months = totalMonths % 12
-  const y = lang === 'fi' ? 'v' : 'yr'
-  const m = lang === 'fi' ? 'kk' : 'mo'
-  if (years === 0) return `${months} ${m}`
-  if (months === 0) return `${years} ${y}`
-  return `${years} ${y} ${months} ${m}`
+    (now.getFullYear() - startYear) * 12 +
+    (now.getMonth() - (startMonth - 1)) +
+    1;
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  const y = lang === 'fi' ? 'v' : 'yr';
+  const m = lang === 'fi' ? 'kk' : 'mo';
+  if (years === 0) return `${months} ${m}`;
+  if (months === 0) return `${years} ${y}`;
+  return `${years} ${y} ${months} ${m}`;
 }
 
 export default function Experience() {
@@ -21,24 +33,21 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-6 px-4">
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-6"
-        >
+      <motion.div
+        className="max-w-3xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportConfig}
+      >
+        <motion.div variants={sectionVariants} className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold gradient-text">
             {t('experience.title')}
           </h2>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          variants={cardVariants}
           className="card-glow bg-white/5 border border-white/10 rounded-2xl p-4 md:p-8"
         >
           <div className="flex items-start gap-3 md:gap-4">
@@ -71,7 +80,7 @@ export default function Experience() {
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

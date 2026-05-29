@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
+import { sectionVariants, viewportConfig } from '@/lib/animationVariants';
 
 const links = [
   {
@@ -41,10 +42,10 @@ export default function Contact() {
     <section id="contact" className="py-12 px-6">
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
         >
           <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-10">
             {t('contact.title')}
