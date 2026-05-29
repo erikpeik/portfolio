@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
-const highlights = ['CS2 Servers', 'Plugin Dev', 'Dedicated Server', 'Website']
+const highlights = ['CS2 Servers', 'Plugin Dev', 'Dedicated Server', 'Website'];
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -74,6 +74,9 @@ export default function Projects() {
                 src="/images/jonnekahvila-website.png"
                 alt="JonneKahvila website"
                 className="w-full h-full object-cover object-top"
+                loading="lazy"
+                width={1738}
+                height={1845}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#0f0f1a]/70 via-transparent to-transparent pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f1a]/60 via-transparent to-transparent pointer-events-none" />
