@@ -12,7 +12,7 @@ const groups = [
   },
   {
     key: 'skills.tools',
-    items: ['Azure', 'Docker', 'Linux', 'Git / GitHub', 'MongoDB'],
+    items: ['Azure', 'Docker', 'Linux', 'Git / GitHub', 'SQL'],
   },
 ] as const;
 
