@@ -52,6 +52,7 @@ const fi = {
   },
   contact: {
     title: 'Yhteystiedot',
+    cta: 'Ota yhteyttä',
   },
   theme: {
     light: 'Vaalea',

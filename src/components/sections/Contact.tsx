@@ -4,6 +4,7 @@ import SectionHeader from '@/components/SectionHeader';
 const EMAIL = 'erikpeik@outlook.com';
 
 const links = [
+  { label: EMAIL, href: `mailto:${EMAIL}` },
   { label: 'GitHub', href: 'https://github.com/erikpeik' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/erikpeik/' },
   { label: 'Discord', href: 'https://discord.com/users/183537301526282241' },
@@ -18,11 +19,10 @@ export default function Contact() {
 
       <a
         href={`mailto:${EMAIL}`}
-        className="block text-[clamp(36px,7vw,96px)] leading-none font-extrabold tracking-[-0.05em] break-words hover:text-accent-hover"
+        className="inline-block text-[clamp(44px,8vw,120px)] leading-[0.9] font-extrabold tracking-[-0.05em] hover:text-accent-hover"
       >
-        erikpeik@
-        <br />
-        outlook.com<span className="text-accent">→</span>
+        {t('contact.cta')}
+        <span className="text-accent">.</span>
       </a>
 
       <ul className="mt-12 flex flex-wrap gap-7 font-mono text-sm">
@@ -30,8 +30,9 @@ export default function Contact() {
           <li key={label}>
             <a
               href={href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(href.startsWith('mailto:')
+                ? {}
+                : { target: '_blank', rel: 'noopener noreferrer' })}
               className="relative border-b border-paper after:absolute after:-inset-x-2 after:-inset-y-3 hover:border-accent-hover hover:text-accent-hover"
             >
               {label}

@@ -52,6 +52,7 @@ const en = {
   },
   contact: {
     title: 'Contact',
+    cta: 'Get in touch',
   },
   theme: {
     light: 'Light',
