@@ -53,6 +53,12 @@ const fi = {
   contact: {
     title: 'Yhteystiedot',
   },
+  theme: {
+    light: 'Vaalea',
+    dark: 'Tumma',
+    switch_light: 'Vaihda vaaleaan teemaan',
+    switch_dark: 'Vaihda tummaan teemaan',
+  },
   footer: {
     source: 'Lähdekoodi',
   },

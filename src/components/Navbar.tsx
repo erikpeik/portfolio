@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const sections = [
   { id: 'work', key: 'nav.work' },
@@ -35,30 +36,34 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="font-mono text-[13px] text-muted">
-          <a
-            href="/"
-            lang="fi"
-            className={cn(
-              'relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover',
-              !isEn && 'text-paper',
-            )}
-            aria-current={!isEn ? 'page' : undefined}
-          >
-            FI
-          </a>
-          {' / '}
-          <a
-            href="/en"
-            lang="en"
-            className={cn(
-              'relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover',
-              isEn && 'text-paper',
-            )}
-            aria-current={isEn ? 'page' : undefined}
-          >
-            EN
-          </a>
+        <div className="flex items-center gap-5 font-mono text-[13px] text-muted">
+          <ThemeToggle />
+          <span aria-hidden="true" className="h-3 w-px bg-line" />
+          <div>
+            <a
+              href="/"
+              lang="fi"
+              className={cn(
+                'relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover',
+                !isEn && 'text-paper',
+              )}
+              aria-current={!isEn ? 'page' : undefined}
+            >
+              FI
+            </a>
+            {' / '}
+            <a
+              href="/en"
+              lang="en"
+              className={cn(
+                'relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover',
+                isEn && 'text-paper',
+              )}
+              aria-current={isEn ? 'page' : undefined}
+            >
+              EN
+            </a>
+          </div>
         </div>
       </nav>
     </header>

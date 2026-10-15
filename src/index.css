@@ -15,7 +15,40 @@
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
+/*
+ * Dark is the default. Light applies when the device prefers it and no
+ * explicit choice is stored, or when the visitor picks it (data-theme).
+ */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --color-ink: #f6f6f3;
+    --color-surface: #e4e4df;
+    --color-paper: #111111;
+    --color-soft: #33332f;
+    --color-muted: #6b6b66;
+    --color-line: #cfcfc9;
+    --color-edge: #111111;
+    --color-accent: #e8480c;
+    --color-accent-hover: #c2410c;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme='light'] {
+  --color-ink: #f6f6f3;
+  --color-surface: #e4e4df;
+  --color-paper: #111111;
+  --color-soft: #33332f;
+  --color-muted: #6b6b66;
+  --color-line: #cfcfc9;
+  --color-edge: #111111;
+  --color-accent: #e8480c;
+  --color-accent-hover: #c2410c;
+  color-scheme: light;
+}
+
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }

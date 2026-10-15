@@ -53,6 +53,12 @@ const en = {
   contact: {
     title: 'Contact',
   },
+  theme: {
+    light: 'Light',
+    dark: 'Dark',
+    switch_light: 'Switch to light theme',
+    switch_dark: 'Switch to dark theme',
+  },
   footer: {
     source: 'Source',
   },
