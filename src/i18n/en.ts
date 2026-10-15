@@ -55,10 +55,7 @@ const en = {
     cta: 'Get in touch',
   },
   theme: {
-    light: 'Light',
-    dark: 'Dark',
-    switch_light: 'Switch to light theme',
-    switch_dark: 'Switch to dark theme',
+    dark: 'Dark theme',
   },
   footer: {
     source: 'Source',

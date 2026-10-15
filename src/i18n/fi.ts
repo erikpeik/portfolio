@@ -55,10 +55,7 @@ const fi = {
     cta: 'Ota yhteyttä',
   },
   theme: {
-    light: 'Vaalea',
-    dark: 'Tumma',
-    switch_light: 'Vaihda vaaleaan teemaan',
-    switch_dark: 'Vaihda tummaan teemaan',
+    dark: 'Tumma teema',
   },
   footer: {
     source: 'Lähdekoodi',
