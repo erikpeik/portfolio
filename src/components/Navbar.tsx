@@ -14,42 +14,52 @@ export default function Navbar() {
 
   return (
     <header className="top-0 z-50 bg-ink/95 backdrop-blur-sm md:sticky">
-      <nav className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-b border-paper py-6">
+      <nav className="flex flex-wrap items-center gap-x-6 border-b border-paper py-3 md:gap-x-7 md:gap-y-3 md:py-6">
         <a
           href="#top"
-          className="text-base font-bold tracking-[-0.01em] hover:text-accent-hover"
+          className="mr-auto py-2.5 text-base font-bold tracking-[-0.01em] hover:text-accent-hover md:py-0"
         >
           Erik Mende
         </a>
 
-        <ul className="flex flex-wrap items-center gap-x-7 gap-y-2 font-mono text-[13px]">
+        <ul className="order-last grid w-full grid-cols-2 gap-x-6 font-mono text-[13px] sm:flex sm:gap-x-7 md:order-none md:w-auto md:flex-wrap md:gap-y-2">
           {sections.map(({ id, key }) => (
             <li key={id}>
-              <a href={`#${id}`} className="hover:text-accent-hover">
+              <a
+                href={`#${id}`}
+                className="block py-3.5 hover:text-accent-hover md:py-0"
+              >
                 {t(key)}
               </a>
             </li>
           ))}
-          <li className="text-muted">
-            <a
-              href="/"
-              lang="fi"
-              className={cn('hover:text-accent-hover', !isEn && 'text-paper')}
-              aria-current={!isEn ? 'page' : undefined}
-            >
-              FI
-            </a>
-            {' / '}
-            <a
-              href="/en"
-              lang="en"
-              className={cn('hover:text-accent-hover', isEn && 'text-paper')}
-              aria-current={isEn ? 'page' : undefined}
-            >
-              EN
-            </a>
-          </li>
         </ul>
+
+        <div className="font-mono text-[13px] text-muted">
+          <a
+            href="/"
+            lang="fi"
+            className={cn(
+              'relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover',
+              !isEn && 'text-paper',
+            )}
+            aria-current={!isEn ? 'page' : undefined}
+          >
+            FI
+          </a>
+          {' / '}
+          <a
+            href="/en"
+            lang="en"
+            className={cn(
+              'relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover',
+              isEn && 'text-paper',
+            )}
+            aria-current={isEn ? 'page' : undefined}
+          >
+            EN
+          </a>
+        </div>
       </nav>
     </header>
   );

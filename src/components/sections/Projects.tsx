@@ -22,9 +22,9 @@ export default function Projects() {
         href="https://jonnekahvila.fi/"
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex flex-wrap items-center gap-8"
+        className="group flex flex-wrap items-center gap-6 sm:gap-8"
       >
-        <div className="aspect-[4/3] w-40 shrink-0 overflow-hidden border border-edge bg-surface">
+        <div className="aspect-[4/3] w-32 shrink-0 overflow-hidden border border-edge bg-surface sm:w-40">
           <img
             src="/images/jonnekahvila-website.png"
             alt=""

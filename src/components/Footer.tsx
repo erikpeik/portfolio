@@ -10,7 +10,7 @@ export default function Footer() {
         href="https://github.com/erikpeik/portfolio"
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:text-accent-hover"
+        className="relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover"
       >
         {t('footer.source')}
       </a>

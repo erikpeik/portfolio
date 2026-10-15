@@ -36,7 +36,7 @@ export default function Hero() {
             <dd>
               <a
                 href={`mailto:${EMAIL}`}
-                className="border-b border-paper hover:border-accent-hover hover:text-accent-hover"
+                className="relative border-b border-paper after:absolute after:-inset-y-3 after:inset-x-0 hover:border-accent-hover hover:text-accent-hover"
               >
                 {EMAIL}
               </a>

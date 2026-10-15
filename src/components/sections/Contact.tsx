@@ -32,7 +32,7 @@ export default function Contact() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-b border-paper hover:border-accent-hover hover:text-accent-hover"
+              className="relative border-b border-paper after:absolute after:-inset-x-2 after:-inset-y-3 hover:border-accent-hover hover:text-accent-hover"
             >
               {label}
             </a>
