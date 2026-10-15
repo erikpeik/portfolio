@@ -2,34 +2,25 @@ import '@/i18n/index';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Skills from '@/components/sections/Skills';
-import Experience from '@/components/sections/Experience';
-import Education from '@/components/sections/Education';
 import Projects from '@/components/sections/Projects';
+import Experience from '@/components/sections/Experience';
+import Skills from '@/components/sections/Skills';
 import Contact from '@/components/sections/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0f] text-slate-100">
-      <Navbar />
-      <main>
-        <Hero />
-        <div className="section-divider" />
-        <About />
-        <div className="section-divider" />
-        <Skills />
-        <div className="section-divider" />
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 md:divide-x md:divide-white/5">
+    <div className="min-h-screen bg-ink text-paper">
+      <div className="mx-auto max-w-[1200px] px-5 md:px-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <Projects />
           <Experience />
-          <Education />
-        </div>
-        <div className="section-divider" />
-        <Projects />
-        <div className="section-divider" />
-        <Contact />
-      </main>
-      <Footer />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

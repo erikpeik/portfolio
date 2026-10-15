@@ -1,74 +1,44 @@
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
-import { sectionVariants, viewportConfig } from '@/lib/animationVariants';
+import SectionHeader from '@/components/SectionHeader';
+
+const EMAIL = 'erikpeik@outlook.com';
 
 const links = [
-  {
-    key: 'linkedin',
-    icon: FaLinkedin,
-    href: 'https://www.linkedin.com/in/erikpeik/',
-    color: 'hover:border-sky-500/50 hover:text-sky-300',
-    glow: 'hover:shadow-[0_0_20px_rgba(14,165,233,0.3)]',
-  },
-  {
-    key: 'email',
-    icon: Mail,
-    href: 'mailto:erikpeik@outlook.com',
-    color: 'hover:border-violet-500/50 hover:text-violet-300',
-    glow: 'hover:shadow-[0_0_20px_rgba(124,58,237,0.3)]',
-  },
-  {
-    key: 'github',
-    icon: FaGithub,
-    href: 'https://github.com/erikpeik',
-    color: 'hover:border-slate-400/50 hover:text-slate-200',
-    glow: 'hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]',
-  },
-  {
-    key: 'discord',
-    icon: FaDiscord,
-    href: 'https://discord.com/users/183537301526282241',
-    color: 'hover:border-indigo-500/50 hover:text-indigo-300',
-    glow: 'hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]',
-  },
+  { label: 'GitHub', href: 'https://github.com/erikpeik' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/erikpeik/' },
+  { label: 'Discord', href: 'https://discord.com/users/183537301526282241' },
 ];
 
 export default function Contact() {
   const { t } = useTranslation();
 
   return (
-    <section id="contact" className="py-12 px-6">
-      <div className="max-w-2xl mx-auto text-center">
-        <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-10">
-            {t('contact.title')}
-          </h2>
+    <section id="contact" className="border-t border-paper pt-7 pb-16">
+      <SectionHeader index={4} title={t('contact.title')} />
 
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            {links.map(({ key, icon: Icon, href, color, glow }) => (
-              <a
-                key={key}
-                href={href}
-                target={href.startsWith('mailto') ? undefined : '_blank'}
-                rel={
-                  href.startsWith('mailto') ? undefined : 'noopener noreferrer'
-                }
-                className={`flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 transition-all duration-300 ${color} ${glow}`}
-              >
-                <Icon size={18} />
-                {t(`contact.${key}`)}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-      </div>
+      <a
+        href={`mailto:${EMAIL}`}
+        className="block text-[clamp(36px,7vw,96px)] leading-none font-extrabold tracking-[-0.05em] break-words hover:text-accent-hover"
+      >
+        erikpeik@
+        <br />
+        outlook.com<span className="text-accent">→</span>
+      </a>
+
+      <ul className="mt-12 flex flex-wrap gap-7 font-mono text-sm">
+        {links.map(({ label, href }) => (
+          <li key={label}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-b border-paper hover:border-accent-hover hover:text-accent-hover"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

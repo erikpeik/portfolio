@@ -1,18 +1,19 @@
-import { SiGithub } from 'react-icons/si'
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
-    <footer className="py-8 px-6 border-t border-white/5 text-center flex flex-col items-center gap-2">
-      <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Erik Mende</p>
+    <footer className="flex flex-wrap justify-between gap-3 border-t border-paper pt-6 pb-10 font-mono text-xs text-muted">
+      <span>© {new Date().getFullYear()} Erik Mende</span>
       <a
         href="https://github.com/erikpeik/portfolio"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-slate-400 transition-colors"
+        className="hover:text-accent-hover"
       >
-        <SiGithub size={12} />
-        Source code
+        {t('footer.source')}
       </a>
     </footer>
-  )
+  );
 }
