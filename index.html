@@ -7,7 +7,7 @@
     <title>Erik Mende | Ohjelmistokehittäjä</title>
     <meta
       name="description"
-      content="Erik Mende - Full-stack ohjelmistokehittäjä Suomesta. Rakennan moderneja web-sovelluksia Reactilla, TypeScriptillä, C#:lla, .NETillä ja Azurella. Katso projektit ja kokemus."
+      content="Erik Mende - Full-stack ohjelmistokehittäjä. Rakennan moderneja web-sovelluksia Reactilla, TypeScriptillä, C#:lla, .NETillä ja Azurella. Katso projektit ja kokemus."
     />
     <meta name="author" content="Erik Mende" />
 
@@ -29,7 +29,7 @@
     />
     <meta
       property="og:description"
-      content="Full-stack developer specializing in React, TypeScript, C#, and .NET. Based in Finland."
+      content="Full-stack developer specializing in React, TypeScript, C#, and .NET."
     />
     <meta property="og:url" content="https://www.erikpeik.fi/" />
     <meta
@@ -55,9 +55,42 @@
       content="https://www.erikpeik.fi/images/og-image.png"
     />
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;700;800&display=swap"
+    />
+
     <!-- Favicon & theme -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="theme-color" content="#0a0a0f" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta
+      name="theme-color"
+      content="#101010"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#f6f6f3"
+      media="(prefers-color-scheme: light)"
+    />
+
+    <!-- Apply a saved theme before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        try {
+          const theme = localStorage.getItem('theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.dataset.theme = theme;
+          }
+        } catch {
+          // Storage unavailable: fall back to the device preference.
+        }
+      })();
+    </script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">

@@ -1,113 +1,71 @@
-import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const sections = [
-  'about',
-  'skills',
-  'experience',
-  'education',
-  'projects',
-  'contact',
+  { id: 'work', key: 'nav.work' },
+  { id: 'experience', key: 'nav.experience' },
+  { id: 'stack', key: 'nav.stack' },
+  { id: 'contact', key: 'nav.contact' },
 ] as const;
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 20);
-          ticking = false;
-        });
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const toggleLanguage = () => {
-    window.location.href = i18n.language === 'en' ? '/' : '/en';
-  };
+  const isEn = i18n.language === 'en';
 
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'bg-[#0a0a0f]/90 backdrop-blur-md border-b border-white/5'
-          : 'bg-transparent',
-      )}
-    >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header className="top-0 z-50 bg-ink/95 backdrop-blur-sm md:sticky">
+      <nav className="flex flex-wrap items-center gap-x-6 border-b border-paper py-3 md:gap-x-7 md:gap-y-3 md:py-6">
         <a
-          href="#"
-          className="gradient-text font-bold text-lg tracking-tight"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
+          href="#top"
+          className="mr-auto py-2.5 text-base font-bold tracking-[-0.01em] hover:text-accent-hover md:py-0"
         >
           Erik Mende
         </a>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-6">
-          {sections.map((s) => (
-            <li key={s}>
+        <ul className="order-last grid w-full grid-cols-2 gap-x-6 font-mono text-[13px] sm:flex sm:gap-x-7 md:order-none md:w-auto md:flex-wrap md:gap-y-2">
+          {sections.map(({ id, key }) => (
+            <li key={id}>
               <a
-                href={`#${s}`}
-                className="text-sm text-slate-400 hover:text-white transition-colors"
+                href={`#${id}`}
+                className="block py-3.5 hover:text-accent-hover md:py-0"
               >
-                {t(`nav.${s}`)}
+                {t(key)}
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
-          <button
-            onClick={toggleLanguage}
-            className="text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10 text-slate-400 hover:border-violet-500/50 hover:text-violet-300 transition-all"
-          >
-            {i18n.language === 'en' ? 'FI' : 'EN'}
-          </button>
-
-          {/* Mobile menu toggle */}
-          <button
-            className="md:hidden text-slate-400 hover:text-white transition-colors"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+        <div className="flex items-center gap-5 font-mono text-[13px] text-muted">
+          <ThemeToggle />
+          <span aria-hidden="true" className="h-3 w-px bg-line" />
+          <div>
+            <a
+              href="/"
+              lang="fi"
+              className={cn(
+                'relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover',
+                !isEn && 'text-paper',
+              )}
+              aria-current={!isEn ? 'page' : undefined}
+            >
+              FI
+            </a>
+            {' / '}
+            <a
+              href="/en"
+              lang="en"
+              className={cn(
+                'relative after:absolute after:-inset-x-2 after:-inset-y-3.5 hover:text-accent-hover',
+                isEn && 'text-paper',
+              )}
+              aria-current={isEn ? 'page' : undefined}
+            >
+              EN
+            </a>
+          </div>
         </div>
       </nav>
-
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-[#0f0f1a]/95 backdrop-blur-md border-b border-white/5 px-6 py-4">
-          <ul className="flex flex-col gap-4">
-            {sections.map((s) => (
-              <li key={s}>
-                <a
-                  href={`#${s}`}
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {t(`nav.${s}`)}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </header>
   );
 }

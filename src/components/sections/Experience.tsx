@@ -1,86 +1,88 @@
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { Briefcase } from 'lucide-react';
-import {
-  containerVariants,
-  sectionVariants,
-  cardVariants,
-  viewportConfig,
-} from '@/lib/animationVariants';
+import SectionHeader from '@/components/SectionHeader';
+import Timeline from '@/components/Timeline';
 
-function calcDuration(
-  startYear: number,
-  startMonth: number,
-  lang: string,
-): string {
-  const now = new Date();
-  const totalMonths =
-    (now.getFullYear() - startYear) * 12 +
-    (now.getMonth() - (startMonth - 1)) +
-    1;
-  const years = Math.floor(totalMonths / 12);
-  const months = totalMonths % 12;
-  const y = lang === 'fi' ? 'v' : 'yr';
-  const m = lang === 'fi' ? 'kk' : 'mo';
-  if (years === 0) return `${months} ${m}`;
-  if (months === 0) return `${years} ${y}`;
-  return `${years} ${y} ${months} ${m}`;
+const certifications = [
+  {
+    year: '2025',
+    name: 'Microsoft Certified: Azure AI Fundamentals',
+    issuer: 'Microsoft',
+  },
+  {
+    year: '2023',
+    name: 'Microsoft Certified: Azure Fundamentals',
+    issuer: 'Microsoft',
+  },
+];
+
+function Group({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className="mt-12 first:mt-0">
+      <h3 className="mb-4 font-mono text-[13px] font-normal text-muted">
+        {title}
+      </h3>
+      {children}
+    </div>
+  );
 }
 
 export default function Experience() {
-  const { t, i18n } = useTranslation();
-  const duration = calcDuration(2022, 12, i18n.language);
+  const { t } = useTranslation();
+  const now = t('experience.now');
+
+  const work = [
+    {
+      period: `2022 — ${now}`,
+      title: t('experience.tieto_role'),
+      org: t('experience.tieto_company'),
+      desc: t('experience.tieto_desc'),
+    },
+  ];
+
+  const education = [
+    {
+      period: `2022 — ${now}`,
+      title: t('education.helsinki_degree'),
+      org: t('education.helsinki_school'),
+      desc: t('education.helsinki_desc'),
+    },
+    {
+      period: '2021 — 2022',
+      title: t('education.hive_title'),
+      org: t('education.hive_school'),
+      desc: t('education.hive_desc'),
+    },
+  ];
 
   return (
-    <section id="experience" className="py-6 px-4">
-      <motion.div
-        className="max-w-3xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportConfig}
-      >
-        <motion.div variants={sectionVariants} className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold gradient-text">
-            {t('experience.title')}
-          </h2>
-        </motion.div>
+    <section id="experience" className="border-t border-paper pt-7 pb-20">
+      <SectionHeader index={2} title={t('experience.title')} />
 
-        <motion.div
-          variants={cardVariants}
-          className="card-glow bg-white/5 border border-white/10 rounded-2xl p-4 md:p-8"
-        >
-          <div className="flex items-start gap-3 md:gap-4">
-            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-violet-600/30 to-cyan-600/30 border border-violet-500/20 flex items-center justify-center">
-              <Briefcase size={20} className="text-violet-300" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-                <h3 className="text-xl font-semibold text-white">
-                  {t('experience.tieto_role')}
-                </h3>
-                <div className="flex items-center gap-1.5 flex-wrap">
-                  <span className="text-sm text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
-                    {t('experience.tieto_period')}
-                  </span>
-                  <span className="text-xs text-violet-300 bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full whitespace-nowrap">
-                    {duration}
-                  </span>
-                </div>
-              </div>
-              <p className="text-violet-300 font-medium mb-2">
-                {t('experience.tieto_company')}
-              </p>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                {t('experience.tieto_desc')}
-              </p>
-              <p className="text-sm text-slate-400 font-mono">
-                {t('experience.tieto_stack')}
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
+      <Group title={t('experience.work')}>
+        <Timeline entries={work} />
+      </Group>
+
+      <Group title={t('education.title')}>
+        <Timeline entries={education} />
+      </Group>
+
+      <Group title={t('education.certifications')}>
+        <ul className="border-b border-line">
+          {certifications.map(({ year, name, issuer }) => (
+            <li
+              key={name}
+              className="grid gap-x-10 gap-y-1 border-t border-line py-3.5 md:grid-cols-[140px_1fr] lg:grid-cols-[140px_minmax(0,1fr)_minmax(0,1.65fr)]"
+            >
+              <span className="font-mono text-[13px] text-muted">{year}</span>
+              <span className="font-medium">{name}</span>
+              <span className="text-soft md:col-start-2 lg:col-start-3">
+                {issuer}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </Group>
     </section>
   );
 }
