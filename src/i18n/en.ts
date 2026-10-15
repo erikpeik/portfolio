@@ -7,9 +7,9 @@ const en = {
   },
   hero: {
     intro:
-      'Software developer in Finland. I build clinical software at Tieto, and run my own CS2 servers on hardware I maintain myself.',
-    now: 'Now',
-    now_value: 'Tieto — healthcare',
+      'Full-stack developer building web applications in healthcare tech at Tieto. On the side, I run my own CS2 servers on hardware I maintain myself.',
+    now: 'Work',
+    now_value: 'Tieto',
     study: 'Study',
     study_value: 'University of Helsinki, CS',
     side: 'Side',
@@ -31,11 +31,16 @@ const en = {
   },
   experience: {
     title: 'Experience & education',
+    work: 'Work',
     now: 'now',
     tieto_role: 'Software Developer',
     tieto_company: 'Tieto',
     tieto_desc:
-      'Healthcare projects — building and maintaining software used in clinical environments. React, TypeScript, C#, .NET, Azure, Next.js.',
+      'Full-stack web development in healthcare tech: cloud-native web applications with React, TypeScript, Next.js and .NET / C#, plus DevOps work in Agile Scrum teams.',
+  },
+  education: {
+    title: 'Education',
+    certifications: 'Certifications',
     helsinki_degree: 'BSc Computer Science',
     helsinki_school: 'University of Helsinki',
     helsinki_desc: 'Studying alongside full-time work.',

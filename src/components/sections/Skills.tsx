@@ -8,11 +8,18 @@ const groups = [
   },
   {
     key: 'skills.backend',
-    items: ['C# / .NET', 'Node / Express', 'PHP', 'Python', 'C'],
+    items: ['C# / .NET', 'Node.js', 'Express', 'PHP', 'Python', 'C'],
   },
   {
     key: 'skills.tools',
-    items: ['Azure', 'Docker', 'Linux', 'Git / GitHub', 'SQL'],
+    items: [
+      'Azure',
+      'Docker',
+      'Linux',
+      'Git / GitHub',
+      'CI/CD',
+      'SQL',
+    ],
   },
 ] as const;
 

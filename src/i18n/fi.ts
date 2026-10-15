@@ -7,9 +7,9 @@ const fi = {
   },
   hero: {
     intro:
-      'Ohjelmistokehittäjä Suomesta. Rakennan terveydenhuollon ohjelmistoja Tietolla ja pyöritän omia CS2-palvelimia itse ylläpitämälläni raudalla.',
-    now: 'Nyt',
-    now_value: 'Tieto — terveydenhuolto',
+      'Full-stack-kehittäjä, joka rakentaa web-sovelluksia terveysteknologian parissa Tietolla. Vapaa-ajalla pyöritän omia CS2-palvelimia itse ylläpitämälläni raudalla.',
+    now: 'Töissä',
+    now_value: 'Tieto',
     study: 'Opinnot',
     study_value: 'Helsingin yliopisto, TKT',
     side: 'Sivuprojekti',
@@ -31,11 +31,16 @@ const fi = {
   },
   experience: {
     title: 'Kokemus & koulutus',
+    work: 'Työkokemus',
     now: 'nyt',
     tieto_role: 'Ohjelmistokehittäjä',
     tieto_company: 'Tieto',
     tieto_desc:
-      'Terveydenhuollon projekteja — kliinisissä ympäristöissä käytettävien ohjelmistojen kehitystä ja ylläpitoa. React, TypeScript, C#, .NET, Azure, Next.js.',
+      'Full-stack-web-kehitystä terveysteknologian parissa: pilvinatiiveja web-sovelluksia Reactilla, TypeScriptillä, Next.js:llä ja .NET / C#:lla sekä DevOps-työtä ketterissä Scrum-tiimeissä.',
+  },
+  education: {
+    title: 'Koulutus',
+    certifications: 'Sertifikaatit',
     helsinki_degree: 'LuK, tietojenkäsittelytiede',
     helsinki_school: 'Helsingin yliopisto',
     helsinki_desc: 'Opiskelen työn ohessa.',

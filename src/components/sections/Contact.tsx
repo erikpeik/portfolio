@@ -4,10 +4,10 @@ import SectionHeader from '@/components/SectionHeader';
 const EMAIL = 'erikpeik@outlook.com';
 
 const links = [
-  { label: EMAIL, href: `mailto:${EMAIL}` },
-  { label: 'GitHub', href: 'https://github.com/erikpeik' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/erikpeik/' },
+  { label: 'GitHub', href: 'https://github.com/erikpeik' },
   { label: 'Discord', href: 'https://discord.com/users/183537301526282241' },
+  { label: EMAIL, href: `mailto:${EMAIL}` },
 ];
 
 export default function Contact() {
